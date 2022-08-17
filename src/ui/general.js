@@ -1,5 +1,5 @@
 export function actualizarTextoAyuda(texto){
-    document.querySelector('#ayudaUsuario'). = texto
+    document.querySelector('#ayudaUsuario').textContent = texto
 }
 
 export function mostrarTotalPokemones(texto){

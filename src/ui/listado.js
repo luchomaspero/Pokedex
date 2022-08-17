@@ -2,12 +2,11 @@ export function actualizarTextoIndicePokemones(texto){
     document.querySelector('#indice').textContent = texto
 }
 
-export function mostrarListadoPokemones(pokemones, pokemonSeleccionadoCallBack = () => {}){
+export function mostrarListadoPokemones(nombresPokemones, pokemonSeleccionadoCallBack = () => {}){
     const $indice = document.querySelector('#indice')
     $indice.innerHTML = ''
 
-    pokemones.forEach(pokemon => {
-        const nombre = pokemon.name
+    nombresPokemones.forEach((nombre) => {
         const $link = document.createElement('a')
         $link.className = 'list-group-item list-group-item-action'
         $link.setAttribute('href', '#')

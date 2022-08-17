@@ -1,5 +1,6 @@
 import { actualizarTextoAyuda } from './general.js';
 
+
 function mostrarTipos(tipos) {
   const $tipos = document.querySelector('#tipos');
   $tipos.innerHTML = '';
@@ -53,11 +54,11 @@ function mostrarHabilidades(habilidades) {
 export default function mostrarPokemon(pokemon) {
   const {
     id,
-    name: nombre,
-    sprites: { front_default: foto },
-    types: tipos,
-    abilities: habilidades,
-    moves: movimientos,
+    nombre,
+    foto,
+    tipos,
+    habilidades,
+    movimientos,
   } = pokemon;
 
   document.querySelector('#contenedor-pokemon').style.display = 'block';
@@ -69,11 +70,8 @@ export default function mostrarPokemon(pokemon) {
 
   document.querySelector('#nombre-pokemon').textContent = nombre;
   document.querySelector('#id-pokemon').textContent = id;
-  
-  mostrarTipos(tipos.map((item) => item.type.name));
-  mostrarHabilidades(habilidades.map((item) => item.ability.name));
-  mostrarMovimientos(movimientos.map((item) => ({
-    movimiento: item.move.name,
-    versiones: item.version_group_details.map((v) => v.version_group.name),
-  })));
+
+  mostrarTipos(tipos);
+  mostrarHabilidades(habilidades);
+  mostrarMovimientos(movimientos);
 }
