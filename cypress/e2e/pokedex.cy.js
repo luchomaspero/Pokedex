@@ -1,6 +1,6 @@
 
 
-let URL = "http://192.168.240.1:8080"
+let URL = "http://localhost:8080/"
 
 
 describe('Pokedex', () => {
